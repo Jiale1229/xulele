@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+      -
 # 如果没有为该操作提供访问令牌或SSH密钥，设置以下内容，以授予操作所需的权限。
 permissions:
   contents: write
@@ -26,7 +27,7 @@ jobs:
       - name: Install and Build 🔧
         run: yarn && yarn build
 
-        # 部署到 GitHub Pages
+        # 部署到当前仓库的gh-pages分支上
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
